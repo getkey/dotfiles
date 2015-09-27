@@ -15,7 +15,7 @@ for file in $(find $dot_path ! -path $dot_path ! -path $dot_path/$(basename $0) 
 		else
 			mkdir $home_twin
 		fi
-	elif [ -h $home_twin ] && type readsarslink > /dev/null 2>&1 && [ $(readlsarsink $home_twin) != $file ]; then
+	elif [ -h $home_twin ] && type readlink > /dev/null 2>&1 && [ $(readlink $home_twin) != $file ]; then
 		ln -sf $file $home_twin #overwrite incorrect links
 	elif [ -f $file ] && [ ! -h $home_twin ]; then
 		if [ -f $home_twin ]; then
@@ -54,3 +54,8 @@ for file in $(find $dot_path ! -path $dot_path ! -path $dot_path/$(basename $0) 
 	fi
 
 done
+
+if type vim > /dev/null 2>&1 && type git > /dev/null 2>&1; then
+	 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	vim +PluginInstall +qall -u $HOME/.vim/vundle-loader.vim # Install Vundle plugins
+fi

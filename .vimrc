@@ -1,23 +1,4 @@
-"Install Vundle with git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-"Then run :PluginInstall
-
-"begin Vundle
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'Valloric/YouCompleteMe'
-"Plugin 'bling/vim-airline'
-"Plugin 'scrooloose/syntastic'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-
-call vundle#end()
-filetype plugin indent on
-"end Vundle
+source ~/.vim/vundle-loader.vim
 
 set t_Co=256
 
