@@ -56,6 +56,11 @@ for file in $(find $dot_path ! -path $dot_path ! -path $dot_path/$(basename $0) 
 done
 
 if type vim > /dev/null 2>&1 && type git > /dev/null 2>&1; then
-	 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
+		git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+	else
+		cd $HOME/.vim/bundle/Vundle.vim
+		printf "Updating Vundle: $(git pull)\n"
+	fi
 	vim +PluginInstall +qall -u $HOME/.vim/vundle-loader.vim # Install Vundle plugins
 fi
