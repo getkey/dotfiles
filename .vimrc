@@ -9,8 +9,11 @@ set hlsearch "highlight search
 colorscheme Tomorrow-Night
 hi Normal ctermbg=NONE"Override theme's background to terminal's default
 
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen "show trailing whitespace
-match ExtraWhitespace /\s\+\%#\@<!$/ "except when typing at the end of a line
+highlight ExtraWhitespace ctermbg=darkred guibg=darkred "show trailing whitespace
+autocmd Syntax * syn match ExtraWhitespace /\s\+\%#\@<!$/ "except when typing at the end of a line
+
+highlight SpaceIndent ctermbg=darkgrey guibg=darkgrey "two or more consecutive spaces
+autocmd Syntax * syn match SpaceIndent / \{2,\}/
 
 if has('mouse')
 	if &term =~# "^screen"
@@ -20,8 +23,9 @@ if has('mouse')
 	endif
 endif
 
-set shiftwidth=3"for > command
-set tabstop=3"hard tabs of length 3
+set shiftwidth=4 "for > command
+set tabstop=4 "hard tabs are 4 spaces wide
+set noexpandtab"always insert tabs with the tab key
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif "remember position in file
 set noswapfile

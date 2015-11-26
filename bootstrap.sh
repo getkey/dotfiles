@@ -63,4 +63,12 @@ if type vim > /dev/null 2>&1 && type git > /dev/null 2>&1; then
 		printf "Updating Vundle: $(git pull)\n"
 	fi
 	vim +PluginInstall +qall -u $HOME/.vim/vundle-loader.vim # Install Vundle plugins
+	options=""
+	if type clang > /dev/null 2>&1; then
+		options="$options --system-libclang --clang-completer"
+	fi
+	if [ -e /usr/include/boost ]; then
+		options="$options --system-boost"
+	fi
+	python2 $HOME/.vim/bundle/YouCompleteMe/install.py $options
 fi

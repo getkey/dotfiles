@@ -1,8 +1,9 @@
 olimex='getkey@getkey.eu'
-alias ssm="ssh $olimex"
+alias ss="ssh $olimex"
 alias st="ssh -t $olimex tmux a || ssh -t $olimex tmux"
+alias sr="rsync --exclude='node_modules' --exclude='shared' --delete -azv ~/devel/getkey $olimex:~/"
 
-alias ud='yaourt -Syua'
+alias ud='(type yaourt > /dev/null 2>&1 && yaourt -Syua) || (type pacman > /dev/null 2>&1 && sudo pacman -Syu) || (type apt-get > /dev/null 2>&1 && sudo apt-get update && sudo apt-get upgrade)'
 alias orcl="sudo pacman -Rsn \$(echo \$(pacman -Qdtq))" # echo to remove the line break
 
 alias ada='gnatmake -gnato -gnatv'
