@@ -19,7 +19,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-PS1="\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\$(if [[ \$? == 0 ]]; then printf \"\[\033[01;32m\]\"; else printf \"\[\033[00;31m\]\"; fi)\$\[\033[00m\] "
+PS1="\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\w\$(if [[ \$? == 0 ]]; then printf \"\[\033[01;32m\]\"; else printf \"\[\033[00;31m\]\"; fi)\$\[\033[00m\] "
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
