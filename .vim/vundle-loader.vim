@@ -7,10 +7,16 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'rust-lang/rust.vim'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+if isdirectory('/usr/src/rust')
+	let g:ycm_rust_src_path = '/usr/src/rust'
+endif
+Plugin 'sheerun/vim-polyglot'
 let g:rust_recommended_style = 0
-"Plugin 'bling/vim-airline'
-"Plugin 'scrooloose/syntastic'
+Plugin 'Raimondi/delimitMate'
+Plugin 'airblade/vim-gitgutter'
+set updatetime=250
+Plugin 'tpope/vim-vinegar'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 call vundle#end()

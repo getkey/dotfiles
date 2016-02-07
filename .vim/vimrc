@@ -29,3 +29,5 @@ set noexpandtab"always insert tabs with the tab key
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif "remember position in file
 set noswapfile
+
+au FileType gitcommit set tw=0
