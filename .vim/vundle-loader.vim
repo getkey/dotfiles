@@ -15,6 +15,7 @@ Plugin 'sheerun/vim-polyglot'
 let g:rust_recommended_style = 0
 Plugin 'Raimondi/delimitMate'
 Plugin 'bolasblack/csslint.vim'
+Plugin 'Valloric/MatchTagAlways'
 Plugin 'airblade/vim-gitgutter'
 set updatetime=250
 Plugin 'tpope/vim-vinegar'

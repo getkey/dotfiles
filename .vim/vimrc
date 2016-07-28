@@ -27,6 +27,14 @@ set shiftwidth=4 "for > command
 set tabstop=4 "hard tabs are 4 spaces wide
 set noexpandtab"always insert tabs with the tab key
 
+"makes more sense on colemak
+noremap j h
+noremap h k
+noremap k j
+
+nnoremap <silent> <C-t> :%s/\ \ \ \ /\t/g<CR>
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
@@ -36,7 +44,6 @@ set autoread
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif "remember position in file
 set noswapfile
 
-nnoremap <silent> <C-t> :%s/\ \ \ \ /\t/g<CR>
 set clipboard=unnamedplus "share vim and the computer's clipboard
 
 au FileType gitcommit set tw=0
