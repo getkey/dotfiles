@@ -19,7 +19,9 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'airblade/vim-gitgutter'
 set updatetime=250
 Plugin 'tpope/vim-vinegar'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+"Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'tomazy/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype plugin indent on

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+SHELL=/bin/sh # https://github.com/VundleVim/Vundle.vim/wiki#faq4
+
 cd ${0%/*}
 dot_path=$(pwd -P)
 
@@ -63,6 +65,9 @@ if type vim > /dev/null 2>&1 && type git > /dev/null 2>&1; then
 		printf "Updating Vundle: $(git pull)\n"
 	fi
 	vim +PluginInstall +qall -u $HOME/.vim/vundle-loader.vim # Install Vundle plugins
+
+	cd ~/.vim/bundle/tomorrow-theme
+	git checkout origin/vim-javascript
 
 	options=""
 	if type clang > /dev/null 2>&1; then
