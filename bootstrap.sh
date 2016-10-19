@@ -1,6 +1,5 @@
 #!/bin/sh
-
-SHELL=/bin/sh # https://github.com/VundleVim/Vundle.vim/wiki#faq4
+SHELL=/bin/sh # See https://github.com/VundleVim/Vundle.vim/wiki#faq4
 
 cd ${0%/*}
 dot_path=$(pwd -P)

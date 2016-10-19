@@ -12,8 +12,15 @@ hi Normal ctermbg=NONE"Override theme's background to terminal's default
 highlight ExtraWhitespace ctermbg=darkred guibg=darkred "show trailing whitespace
 autocmd Syntax * syn match ExtraWhitespace /\s\+\%#\@<!$/ "except when typing at the end of a line
 
-highlight SpaceIndent ctermbg=darkgrey guibg=darkgrey "two or more consecutive spaces
-autocmd Syntax * syn match SpaceIndent / \{2,\}/
+fun! ShowConsecutiveSpaces()
+    "except for these filetypes
+    if &ft =~ 'text\|sql\|asm68k'
+        return
+    endif
+	syn match SpaceIndent / \{2,\}/
+endfun
+highlight SpaceIndent ctermbg=darkgrey guibg=darkgrey "show two or more consecutive spaces
+autocmd Syntax * call ShowConsecutiveSpaces()
 
 if has('mouse')
 	if &term =~# "^screen"
