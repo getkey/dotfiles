@@ -54,3 +54,5 @@ set noswapfile
 set clipboard=unnamedplus "share vim and the computer's clipboard
 
 au FileType gitcommit set tw=0
+autocmd FileType markdown,text,tex setlocal spell
+au BufRead,BufNewFile *.jake set filetype=javascript
