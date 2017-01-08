@@ -1,12 +1,16 @@
 [user]
 	name = Getkey
 	email = getkey@getkey.eu
+
 [core]
 	editor = vim
+
 [push]
 	default = simple
+
 [diff]
 	tool = meld
 	compactionHeuristic = true
+
 [credential "https://github.com"]
 	username = getkey
