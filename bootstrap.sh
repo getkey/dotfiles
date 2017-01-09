@@ -63,7 +63,7 @@ dot_path=$(pwd -P)
 
 link_dir 'public'
 
-if [ $USER == 'getkey' ] || [ $USER == 'mourerj' ]; then
+if [ $USER = 'getkey' -o $USER = 'mourerj' ]; then
 	link_dir 'personal'
 fi
 
