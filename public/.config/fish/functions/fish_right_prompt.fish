@@ -2,15 +2,15 @@ set fish_git_dirty_color yellow
 set fish_git_clean_color green
 
 function parse_git_dirty
-	if test (env LANG=en_EN.UTF-8 git status | tail -n1) != 'nothing to commit, working directory clean'
-		echo (set_color $fish_git_dirty_color)
-	else
+	if env LANG=C git status | tail -n1 | grep -Eq '^nothing to commit, working (directory|tree) clean$'
 		echo (set_color $fish_git_clean_color)
+	else
+		echo (set_color $fish_git_dirty_color)
 	end
 end
 
 function parse_git_changes
-	echo (env LANG=en_EN.UTF-8 git diff --stat | tail -n1 | sed 's/\,//g' | sed 's/ files\{0,1\}\ changed/~/' | sed 's/ insertions\{0,1\}(+)/+/' | sed 's/ deletions\{0,1\}(-)/-/')
+	echo (env LANG=C git diff --stat | tail -n1 | sed 's/\,//g' | sed 's/ files\{0,1\}\ changed/~/' | sed 's/ insertions\{0,1\}(+)/+/' | sed 's/ deletions\{0,1\}(-)/-/')
 end
 
 function fish_right_prompt
