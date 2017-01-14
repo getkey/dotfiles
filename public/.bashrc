@@ -9,6 +9,8 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 export VISUAL="vim"
+export LC_MESSAGES='en_US.UTF-8' # for CLI programs
+# another language can be used for GUI programs by exporting it in ~/.xinitrc, ie export LC_MESSAGES=fr_FR.UTF-8
 
 if [ -e /usr/share/terminfo/x/xterm-256color ] && [[ $TERM != screen* ]]; then
 	export TERM='xterm-256color'
