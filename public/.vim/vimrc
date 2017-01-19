@@ -6,8 +6,12 @@ set number
 syntax on
 set hlsearch "highlight search
 
-colorscheme Tomorrow-Night
-hi Normal ctermbg=NONE"Override theme's background to terminal's default
+if has('gui_running')
+	colorscheme base16-tomorrow-night
+else " the base16 version needs the terminal's theme to be tomorrow as well, which is not my case so I have to fallback to the original version
+	colorscheme Tomorrow-Night
+	hi Normal ctermbg=NONE " Override theme's background to terminal's default. Useful when it is transparent
+endif
 
 highlight ExtraWhitespace ctermbg=darkred guibg=darkred "show trailing whitespace
 autocmd Syntax * syn match ExtraWhitespace /\s\+\%#\@<!$/ "except when typing at the end of a line
@@ -32,7 +36,7 @@ endif
 
 set shiftwidth=4 "for > command
 set tabstop=4 "hard tabs are 4 spaces wide
-set noexpandtab"always insert tabs with the tab key
+set noexpandtab "always insert tabs with the tab key
 
 "makes more sense on colemak
 noremap j h

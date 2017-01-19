@@ -31,7 +31,7 @@ set updatetime=250
 Plugin 'tpope/vim-vinegar'
 
 Plugin 'tomazy/tomorrow-theme', {'rtp': 'vim/'} " chriskempson/tomorrow-theme fork that supports pangloss/vim-javascript
-"Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/base16-vim'
 
 Plugin 'SirVer/ultisnips' " snippet engine
 let g:UltiSnipsExpandTrigger = "<nop>"
