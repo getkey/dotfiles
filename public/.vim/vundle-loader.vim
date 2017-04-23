@@ -18,6 +18,7 @@ let g:rust_recommended_style = 0
 
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/MatchTagAlways'
+Plugin 'tpope/vim-surround'
 
 Plugin 'bolasblack/csslint.vim'
 

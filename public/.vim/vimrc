@@ -11,10 +11,10 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=DarkRed guibg=DarkRed " 
 autocmd Syntax * syn match ExtraWhitespace /\s\+\%#\@<!$/ "except when typing at the end of a line
 
 fun! ShowConsecutiveSpaces()
-    "except for these filetypes
-    if &ft =~ 'text\|sql\|asm68k'
-        return
-    endif
+	"except for these filetypes
+	if &ft =~ 'text\|sql\|asm68k'
+		return
+	endif
 	syn match SpaceIndent / \{2,\}/
 endfun
 highlight SpaceIndent ctermbg=DarkGrey guibg=DarkGrey "show two or more consecutive spaces
@@ -56,16 +56,23 @@ endif
 nnoremap <silent> <C-t> :%s/\ \ \ \ /\t/g<CR>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
+set guioptions-=T "remove toolbar
+set guioptions-=r "remove right-hand scroll bar
+set guioptions-=L "remove left-hand scroll bar
 
 set autoread
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif "remember position in file
 set noswapfile
 
-set clipboard=unnamedplus "share vim and the computer's clipboard
+if has("unix")
+	let s:uname = system("uname -s")
+	if s:uname =~ "Darwin" " OS X
+		set clipboard=unnamed "share vim and the computer's clipboard
+	else
+		set clipboard=unnamedplus "share vim and the computer's clipboard
+	endif
+endif
 
 au FileType gitcommit set tw=0
 autocmd FileType markdown,text,tex setlocal spell
