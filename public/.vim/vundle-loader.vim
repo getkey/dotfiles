@@ -17,19 +17,20 @@ Plugin 'sheerun/vim-polyglot'
 let g:rust_recommended_style = 0
 
 Plugin 'Raimondi/delimitMate'
+Plugin 'Valloric/MatchTagAlways'
 
 Plugin 'bolasblack/csslint.vim'
 
 Plugin 'chrisbra/Colorizer'
 let g:colorizer_auto_filetype='css,html,svg'
 
-Plugin 'Valloric/MatchTagAlways'
-
 Plugin 'airblade/vim-gitgutter'
 set updatetime=250
 
 Plugin 'tpope/vim-vinegar'
+Plugin 'ctrlpvim/ctrlp.vim'
 
+" themes
 Plugin 'tomazy/tomorrow-theme', {'rtp': 'vim/'} " chriskempson/tomorrow-theme fork that supports pangloss/vim-javascript
 Plugin 'chriskempson/base16-vim'
 

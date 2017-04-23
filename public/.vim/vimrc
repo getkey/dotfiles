@@ -40,10 +40,18 @@ set shiftwidth=4 "for > command
 set tabstop=4 "hard tabs are 4 spaces wide
 set noexpandtab "always insert tabs with the tab key
 
-"makes more sense on colemak
-noremap j h
-noremap h k
-noremap k j
+if has('gui_running')
+	let colemak=system('setxkbmap -query') =~ 'colemak'
+else
+	let colemak=system('localectl') =~ 'colemak'
+endif
+
+if colemak
+	"makes more sense on colemak
+	noremap j h
+	noremap h k
+	noremap k j
+endif
 
 nnoremap <silent> <C-t> :%s/\ \ \ \ /\t/g<CR>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
