@@ -30,6 +30,9 @@ set updatetime=250
 
 Plugin 'tpope/vim-vinegar'
 Plugin 'ctrlpvim/ctrlp.vim'
+if executable('rg')
+	let g:ctrlp_user_command = 'rg --files --color=never %s'
+endif
 
 " themes
 Plugin 'tomazy/tomorrow-theme', {'rtp': 'vim/'} " chriskempson/tomorrow-theme fork that supports pangloss/vim-javascript
