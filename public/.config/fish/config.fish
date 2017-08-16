@@ -1,7 +1,23 @@
 set fish_greeting # Disable greeting
 
-set PATH $HOME/.cargo/bin $PATH
-set VISUAL 'vim'
+set -l CARGO_BIN_PATH $HOME/.cargo/bin
+if test -d $CARGO_BIN_PATH
+	set PATH $CARGO_BIN_PATH $PATH
+end
+
+begin
+	if test -n "$XDG_DATA_HOME"
+		set HOME_BIN_PATH $XDG_DATA_HOME/bin
+	else
+		set HOME_BIN_PATH $HOME/.local/bin
+	end
+
+	if test -d $HOME_BIN_PATH
+		set PATH $HOME_BIN_PATH $PATH
+	end
+end
+
+set -x VISUAL 'vim'
 set -x OLIMEX 'getkey@getkey.eu'
 
 set -x LC_MESSAGES 'en_US.UTF-8' # for CLI programs

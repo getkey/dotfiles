@@ -15,6 +15,11 @@ endif
 
 Plugin 'sheerun/vim-polyglot'
 let g:rust_recommended_style = 0
+let g:python_recommended_style = 0
+autocmd FileType python setl sw=4 sts=4 et
+
+Plugin 'jdonaldson/vaxe'
+au FileType haxe set autowrite
 
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/MatchTagAlways'
@@ -54,3 +59,4 @@ Plugin 'honza/vim-snippets' " snippets themselves
 
 call vundle#end()
 filetype plugin indent on
+autocmd FileType * set noexpandtab
