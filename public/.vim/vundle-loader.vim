@@ -24,6 +24,7 @@ au FileType haxe set autowrite
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 
 Plugin 'bolasblack/csslint.vim'
 
