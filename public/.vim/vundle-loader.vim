@@ -36,8 +36,9 @@ set updatetime=250
 
 Plugin 'tpope/vim-vinegar'
 Plugin 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_show_hidden = 1
 if executable('rg')
-	let g:ctrlp_user_command = 'rg --files --color=never %s'
+	let g:ctrlp_user_command = 'rg --hidden -g ''!.git/'' --files --color=never %s'
 endif
 
 " themes

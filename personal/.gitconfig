@@ -18,4 +18,3 @@
 
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
-	pager = true
