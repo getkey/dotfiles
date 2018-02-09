@@ -33,7 +33,13 @@ let g:colorizer_auto_filetype='css,html,svg'
 
 Plugin 'airblade/vim-gitgutter'
 set updatetime=250
+Plugin 'vim-syntastic/syntastic'
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe='yarn -s eslint'
+let g:syntastic_javascript_eslint_exec='yarn'
 
+
+" File navigation
 Plugin 'tpope/vim-vinegar'
 Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_show_hidden = 1
@@ -41,10 +47,11 @@ if executable('rg')
 	let g:ctrlp_user_command = 'rg --hidden -g ''!.git/'' --files --color=never %s'
 endif
 
-" themes
+" Themes
 Plugin 'tomazy/tomorrow-theme', {'rtp': 'vim/'} " chriskempson/tomorrow-theme fork that supports pangloss/vim-javascript
 Plugin 'chriskempson/base16-vim'
 
+" Snippets
 Plugin 'SirVer/ultisnips' " snippet engine
 let g:UltiSnipsExpandTrigger = "<nop>"
 let g:ulti_expand_or_jump_res = 0
