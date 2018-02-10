@@ -13,6 +13,13 @@
 	tool = meld
 	compactionHeuristic = true
 
+[alias]
+	l = log --pretty=format:\"%C(yellow)%h %Cblue%ad %Creset%s%d %Cgreen%aN\" --graph --date=short
+	nb = checkout -b
+	db = branch -D
+	co = commit
+	ch = checkout
+
 [credential "https://github.com"]
 	username = getkey
 
