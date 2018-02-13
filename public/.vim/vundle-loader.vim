@@ -33,10 +33,7 @@ let g:colorizer_auto_filetype='css,html,svg'
 
 Plugin 'airblade/vim-gitgutter'
 set updatetime=250
-Plugin 'vim-syntastic/syntastic'
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe='yarn -s eslint'
-let g:syntastic_javascript_eslint_exec='yarn'
+Plugin 'w0rp/ale'
 
 
 " File navigation
