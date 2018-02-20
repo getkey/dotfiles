@@ -17,6 +17,11 @@ begin
 	end
 end
 
+set gcloud_path_script /opt/google-cloud-sdk/path.fish.inc
+if test -f $gcloud_path_script
+	source $gcloud_path_script
+end
+
 set -x VISUAL 'vim'
 set -x OLIMEX 'getkey@getkey.eu'
 
