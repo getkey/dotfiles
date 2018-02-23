@@ -1,3 +1,7 @@
 function orcl -d 'Remove orphan packages'
-	sudo pacman -Rsn (pacman -Qdtq)
+	if set orphans (pacman -Qdtq)
+		sudo pacman -Rsn $orphans
+	else
+		echo 'No orphans to clean!'
+	end
 end
