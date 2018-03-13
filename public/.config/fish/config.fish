@@ -17,7 +17,12 @@ begin
 	end
 end
 
-set gcloud_path_script /opt/google-cloud-sdk/path.fish.inc
+if test (uname) = 'Darwin'
+	set gcloud_path_script /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+else
+	set gcloud_path_script /opt/google-cloud-sdk/path.fish.inc
+end
+
 if test -f $gcloud_path_script
 	source $gcloud_path_script
 end
