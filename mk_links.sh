@@ -62,6 +62,6 @@ project_root=$(pwd -P) # get cwd so we are sure `$project_root` is not a symlink
 
 link_dir 'public'
 
-if [ $USER = 'getkey' -o $USER = 'mourerj' ]; then
+if [ $USER = 'getkey' -o $USER = 'mourerj' -o $USER = 'julien' ]; then
 	link_dir 'personal'
 fi

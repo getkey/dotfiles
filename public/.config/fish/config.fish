@@ -28,6 +28,7 @@ if test -f $gcloud_path_script
 end
 
 set -x VISUAL 'vim'
+set -x EDITOR 'vim' # for the morons who think $EDITOR is the same as $VISUAL
 set -x OLIMEX 'getkey@getkey.eu'
 
 set -x LC_MESSAGES 'en_US.UTF-8' # for CLI programs
