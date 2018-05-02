@@ -19,6 +19,8 @@
 	db = branch -D
 	co = commit
 	ch = checkout
+	branch-name = rev-parse --abbrev-ref HEAD
+	pu = !"git push --set-upstream origin $(git branch-name)"
 
 [credential "https://github.com"]
 	username = getkey
