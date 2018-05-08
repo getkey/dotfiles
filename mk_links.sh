@@ -1,6 +1,9 @@
 #!/bin/sh
 
-link_dir() {
+recursive_setup() {
+	# TODO: split this up in composable function so that different functions are used for copy and link
+	# $1 is the root directory
+	# $2 is the command that should be used to link/copy
 	dir_path=$project_root/$1
 
 	for file in $(find $dir_path ! -path $dir_path); do
@@ -51,7 +54,7 @@ link_dir() {
 				done
 			fi
 
-			ln -sf $file $home_twin
+			$2 $file $home_twin
 		fi
 
 	done
@@ -59,9 +62,11 @@ link_dir() {
 
 cd $(dirname $0) # go to the directory containing this script
 project_root=$(pwd -P) # get cwd so we are sure `$project_root` is not a symlink
+link='ln -sf'
 
-link_dir 'public'
+recursive_setup 'public' "$link"
+recursive_setup 'copy' 'cp'
 
 if [ $USER = 'getkey' -o $USER = 'mourerj' -o $USER = 'julien' ]; then
-	link_dir 'personal'
+	recursive_setup 'personal' "$link"
 fi

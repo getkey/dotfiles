@@ -1,0 +1,9 @@
+[Unit]
+Description=Shuts the computer down to force me to go to bed
+
+[Timer]
+OnBootSec=1min
+Unit=systemd-poweroff.service
+
+[Install]
+WantedBy=timers.target
