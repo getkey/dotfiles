@@ -1,8 +1,11 @@
 set fish_greeting # Disable greeting
 
-set -l CARGO_BIN_PATH $HOME/.cargo/bin
-if test -d $CARGO_BIN_PATH
-	set PATH $CARGO_BIN_PATH $PATH
+function addtopath --description 'Attempts to add a directory to the PATH'
+	# $argv[1] directory to add
+
+	if test -d $argv[1]
+		set PATH $PATH $argv[1]
+	end
 end
 
 begin
@@ -12,10 +15,15 @@ begin
 		set HOME_BIN_PATH $HOME/.local/bin
 	end
 
-	if test -d $HOME_BIN_PATH
-		set PATH $HOME_BIN_PATH $PATH
-	end
+	addtopath $HOME_BIN_PATH
 end
+
+addtopath $HOME/.cargo/bin
+addtopath $HOME/.yarn/bin
+
+set -x ANDROID_HOME $HOME/Android/Sdk
+addtopath $ANDROID_HOME/tools
+addtopath $ANDROID_HOME/platform-tools
 
 if test (uname) = 'Darwin'
 	set gcloud_path_script /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
