@@ -25,6 +25,9 @@ set -x ANDROID_HOME $HOME/Android/Sdk
 addtopath $ANDROID_HOME/tools
 addtopath $ANDROID_HOME/platform-tools
 
+set -x GOPATH $HOME/go
+addtopath $GOPATH/bin
+
 if test (uname) = 'Darwin'
 	set gcloud_path_script /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 else
