@@ -38,6 +38,10 @@ if test -f $gcloud_path_script
 	source $gcloud_path_script
 end
 
+if type -fq direnv
+	eval (direnv hook fish)
+end
+
 set -x VISUAL 'vim'
 set -x EDITOR 'vim' # for the morons who think $EDITOR is the same as $VISUAL
 set -x OLIMEX 'getkey@getkey.eu'
