@@ -1,0 +1,8 @@
+[Unit]
+Description=Shuts the computer down to force me to go to bed
+
+[Service]
+ExecStart=/usr/bin/shutdown
+
+[Install]
+WantedBy=default.target

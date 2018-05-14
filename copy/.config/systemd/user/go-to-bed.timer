@@ -2,8 +2,8 @@
 Description=Shuts the computer down to force me to go to bed
 
 [Timer]
-OnBootSec=1min
-Unit=systemd-poweroff.service
+OnCalendar=Sun,Mon-Thu *-*-* 23:00:00
+Unit=go-to-bed.service
 
 [Install]
 WantedBy=timers.target
