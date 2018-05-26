@@ -15,7 +15,7 @@ fun! ShowConsecutiveSpaces()
 	if &ft =~ 'text\|sql\|asm68k'
 		return
 	endif
-	syn match SpaceIndent / \{2,\}/
+	syn match SpaceIndent /^ \{2,\}/
 endfun
 highlight SpaceIndent ctermbg=DarkGrey guibg=DarkGrey "show two or more consecutive spaces
 autocmd ColorScheme * highlight SpaceIndent ctermbg=DarkGrey guibg=DarkGrey "show two or more consecutive spaces
