@@ -5,10 +5,16 @@ function clusterswitch -d 'Switch the cluster'
 	end
 
 	switch $argv[1]
-		case playground
-			gcloud container clusters get-credentials playground --zone europe-west1-c --project poki-core
-		case core
-			gcloud container clusters get-credentials poki-cluster --zone europe-west1-c --project poki-core
+		case production
+			gcloud container clusters get-credentials europe-production --zone europe-west1-c --project poki-core
+		case acceptance
+			gcloud container clusters get-credentials europe-acceptance --zone europe-west1-c --project poki-core
+		case staging
+			gcloud container clusters get-credentials europe-staging --zone europe-west1-c --project poki-core
+		case cache
+			gcloud container clusters get-credentials europe-cache --zone europe-west1-c --project poki-core
+		case misc
+			gcloud container clusters get-credentials europe-misc --zone europe-west1-c --project poki-core
 		case '*'
 			echo Unknown cluster name
 	end
