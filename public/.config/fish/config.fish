@@ -23,6 +23,7 @@ addtopath $HOME/.yarn/bin
 
 set -x ANDROID_HOME $HOME/Android/Sdk
 addtopath $ANDROID_HOME/tools
+addtopath $ANDROID_HOME/tools/bin
 addtopath $ANDROID_HOME/platform-tools
 
 set -x GOPATH $HOME/go
