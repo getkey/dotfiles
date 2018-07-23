@@ -1,6 +1,6 @@
 function ud
 	if command -s yay > /dev/null
-		yay -Syua
+		yay
 	else if command -s pacman > /dev/null
 		sudo pacman -Syu
 	else if command -s apt-get > /dev/null
