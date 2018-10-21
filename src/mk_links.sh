@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# import coloured print functions
+. utility.sh
+
 recursive_setup() {
 	# TODO: split this up in composable function so that different functions are used for copy and link
 	# $1 is the root directory
