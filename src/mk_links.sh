@@ -14,7 +14,7 @@ recursive_setup() {
 
 		if [ -d $file ] && [ ! -d $home_twin ]; then
 			if [ -e $home_twin ]; then
-				printf "Error: can't create directory $home_twin; a file is present already. Aborting\n"
+				e_error "Error: can't create directory $home_twin; a file is present already. Aborting"
 				exit 1
 			else
 				mkdir $home_twin
@@ -23,7 +23,8 @@ recursive_setup() {
 			ln -sf $file $home_twin #overwrite incorrect links
 		elif [ -f $file ] && [ ! -h $home_twin ]; then
 			if [ -f $home_twin ]; then
-				printf "The file $file already exists. Overwrite it? (y=yes n=no a=archive) "
+				e_warning "The file $file already exists."
+				e_prompt "Overwrite it? (y=yes n=no a=archive)"
 				while true; do
 					read choice
 					case $choice in
@@ -40,7 +41,7 @@ recursive_setup() {
 								mv $home_twin $archi_path
 								break
 							else
-								printf "Error: another $base_file file is present in $archi_path. Aborting\n"
+								e_error "another $base_file file is present in $archi_path. Aborting\n"
 								exit 1
 							fi
 							;;
@@ -48,7 +49,8 @@ recursive_setup() {
 							break
 							;;
 						*)
-							printf 'Invalid choice. Try again, shall I overwrite it ? (y=yes n=no a=archive) '
+							e_error "Invalid choice."
+							e_prompt "Try again, shall I overwrite it ? (y=yes n=no a=archive)"
 							;;
 					esac
 				done
