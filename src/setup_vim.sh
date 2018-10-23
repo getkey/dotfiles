@@ -1,5 +1,8 @@
 #!/bin/sh
+
 SHELL=/bin/sh # See https://github.com/VundleVim/Vundle.vim/wiki#faq4
+
+. utility.sh
 
 if type vim > /dev/null 2>&1 && type git > /dev/null 2>&1; then
 	if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
