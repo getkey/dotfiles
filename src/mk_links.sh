@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# import coloured print functions
+# import colored print functions
 . utility.sh
 
 recursive_setup() {
@@ -53,7 +53,7 @@ recursive_setup() {
 							;;
 						*)
 							e_error "Invalid choice."
-							e_prompt "Try again, shall I overwrite it ? (y=yes n=no a=archive)"
+							e_prompt "Choose between (y=yes n=no a=archive)"
 							;;
 					esac
 				done

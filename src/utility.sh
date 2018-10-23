@@ -1,7 +1,7 @@
 bold=$(tput bold)
 reset=$(tput sgr0)
 
-# terminal colours
+# terminal colors
 red=$(tput setaf 1)
 green=$(tput setaf 2)
 yellow=$(tput setaf 3)
@@ -16,7 +16,7 @@ e_error() {
 }
 
 e_warning() {
-  printf "${yellow}Warning: %s${reset}\n" "$@"
+  printf "${yellow}${bold}!${reset} ${yellow}%s${reset}\n" "$@"
 }
 
 e_prompt() {
