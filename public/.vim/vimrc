@@ -67,7 +67,7 @@ set noswapfile
 
 if has("unix")
 	let s:uname = system("uname -s")
-	if s:uname =~ "Darwin" " OS X
+	if s:uname =~ "Darwin" " macOS
 		set clipboard=unnamed "share vim and the computer's clipboard
 	else
 		set clipboard=unnamedplus "share vim and the computer's clipboard
@@ -76,4 +76,4 @@ endif
 
 au FileType gitcommit set tw=0
 autocmd FileType markdown,text,tex setlocal spell
-au BufRead,BufNewFile *.jake set filetype=javascript
+autocmd BufNewFile,BufRead *.svelte set syntax=html
