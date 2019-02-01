@@ -21,11 +21,11 @@ if type vim > /dev/null 2>&1 && type git > /dev/null 2>&1; then
 		options="$options --system-boost"
 	fi
 	if type node > /dev/null 2>&1 && type npm > /dev/null 2>&1; then
-		options="$options --tern-completer"
+		options="$options --ts-completer"
 	fi
 	if type rustc > /dev/null 2>&1 && type cargo > /dev/null 2>&1; then
 		options="$options --racer-completer"
 	fi
 
-	python2 $HOME/.vim/bundle/YouCompleteMe/install.py $options
+	python3 $HOME/.vim/bundle/YouCompleteMe/install.py $options
 fi

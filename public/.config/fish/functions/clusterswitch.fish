@@ -6,13 +6,11 @@ function clusterswitch -d 'Switch the cluster'
 
 	switch $argv[1]
 		case production
-			gcloud container clusters get-credentials europe-production --zone europe-west1-c --project poki-core
+			gcloud container clusters get-credentials us-production --zone us-east1-c --project poki-core
 		case acceptance
-			gcloud container clusters get-credentials europe-acceptance --zone europe-west1-c --project poki-core
+			gcloud container clusters get-credentials us-acceptance --zone us-east1-c --project poki-core
 		case staging
-			gcloud container clusters get-credentials europe-staging --zone europe-west1-c --project poki-core
-		case cache
-			gcloud container clusters get-credentials europe-cache --zone europe-west1-c --project poki-core
+			gcloud container clusters get-credentials us-staging --zone us-east1-c --project poki-core
 		case misc
 			gcloud container clusters get-credentials europe-misc --zone europe-west1-c --project poki-core
 		case '*'
