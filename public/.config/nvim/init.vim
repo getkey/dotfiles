@@ -29,6 +29,7 @@ colorscheme base16-tomorrow-night
 
 set number
 set noswapfile
+set autoread " auto reload
 
 " clipboard
 set clipboard=unnamedplus " use the system clipboard (a clipboard tool needs to be installed, check :help clipboard-tool)

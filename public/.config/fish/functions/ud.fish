@@ -13,4 +13,8 @@ function ud
 		echo 'No package manager detected'
 		return 1
 	end
+
+	if command -s yarn > /dev/null
+		yarn global upgrade-interactive
+	end
 end
