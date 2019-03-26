@@ -29,7 +29,10 @@ colorscheme base16-tomorrow-night
 
 set number
 set noswapfile
-set autoread " auto reload
+
+" auto reload
+set autoread
+autocmd FocusGained * :checktime
 
 " clipboard
 set clipboard=unnamedplus " use the system clipboard (a clipboard tool needs to be installed, check :help clipboard-tool)
@@ -40,4 +43,5 @@ set shiftwidth=4 "for > command
 set tabstop=4 "hard tabs are 4 spaces wide
 set noexpandtab "always insert tabs with the tab key
 
+autocmd FileType markdown,text,tex setlocal spell
 autocmd BufNewFile,BufRead *.svelte set syntax=html
