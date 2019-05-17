@@ -22,8 +22,8 @@ Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 let g:nvim_typescript#javascript_support = 1
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
-call plug#end()
 
+call plug#end()
 
 colorscheme base16-tomorrow-night
 
@@ -42,6 +42,9 @@ set mouse=ar " all + middle click copy/paste
 set shiftwidth=4 "for > command
 set tabstop=4 "hard tabs are 4 spaces wide
 set noexpandtab "always insert tabs with the tab key
+
+" clear search highligh
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 autocmd FileType markdown,text,tex setlocal spell
 autocmd BufNewFile,BufRead *.svelte set syntax=html
