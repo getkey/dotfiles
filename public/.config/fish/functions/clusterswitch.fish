@@ -6,7 +6,7 @@ function clusterswitch -d 'Switch the cluster'
 
 	switch $argv[1]
 		case production
-			gcloud container clusters get-credentials us-production --zone us-east1-c --project poki-core
+			gcloud container clusters get-credentials us-prod --zone us-east1-c --project poki-core
 		case acceptance
 			gcloud container clusters get-credentials us-acceptance --zone us-east1-c --project poki-core
 		case staging
