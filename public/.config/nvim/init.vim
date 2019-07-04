@@ -48,3 +48,9 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 autocmd FileType markdown,text,tex setlocal spell
 autocmd BufNewFile,BufRead *.svelte set syntax=html
+
+" jumps to the last known position in a file after opening it (see :help last-position-jump)
+autocmd BufReadPost *
+	\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+	\ |   exe "normal! g`\""
+	\ | endif

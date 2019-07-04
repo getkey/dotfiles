@@ -3,7 +3,6 @@
 	email = getkey@getkey.eu
 
 [core]
-	editor = vim
 	excludesfile = ~/.gitignore
 
 [push]
