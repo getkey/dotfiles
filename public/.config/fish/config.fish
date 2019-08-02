@@ -19,7 +19,11 @@ begin
 end
 
 addtopath $HOME/.cargo/bin
-addtopath $HOME/.yarn/bin
+
+if type -fq yarn
+	# this is important because with nvm it might not always be $HOME/.yarn/bin
+	addtopath (yarn global bin)
+end
 
 set -x ANDROID_HOME $HOME/Android/Sdk
 addtopath $ANDROID_HOME/tools
