@@ -54,3 +54,7 @@ autocmd BufReadPost *
 	\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
 	\ |   exe "normal! g`\""
 	\ | endif
+
+" disable safe write that occasionally breaks watchers
+" see https://github.com/rollup/rollup/issues/1666#issuecomment-547613081
+set backupcopy=yes
