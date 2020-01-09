@@ -1,0 +1,9 @@
+[Unit]
+Description=Warns that the computer will shut down to force me to go to bed
+
+[Timer]
+OnCalendar=Sun,Mon-Thu *-*-* 22:50:00
+Unit=go-to-bed-warning.service
+
+[Install]
+WantedBy=timers.target

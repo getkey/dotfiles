@@ -1,0 +1,5 @@
+[Unit]
+Description=Warns that the computer will shut down to force me to go to bed
+
+[Service]
+ExecStart=/usr/bin/notify-send 'The computer will shut down in 10 minutes' --urgency critical
