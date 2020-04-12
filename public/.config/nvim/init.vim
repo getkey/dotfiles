@@ -48,6 +48,8 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 autocmd FileType markdown,text,tex setlocal spell
 autocmd BufNewFile,BufRead *.svelte set syntax=html
+autocmd BufNewFile,BufRead .envrc set filetype=sh " it's executed in a bash sub-shell
+autocmd FileType gitcommit setlocal textwidth=0 " don't restrict line width to 80 characters
 
 " jumps to the last known position in a file after opening it (see :help last-position-jump)
 autocmd BufReadPost *
