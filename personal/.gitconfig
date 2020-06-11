@@ -8,6 +8,9 @@
 [push]
 	default = simple
 
+[pull]
+	ff = only
+
 [diff]
 	tool = meld
 	compactionHeuristic = true
