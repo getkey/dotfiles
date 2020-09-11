@@ -8,7 +8,6 @@ function ud
 		and sudo apt-get upgrade
 	else if command -s brew > /dev/null
 		brew upgrade
-		brew cask upgrade
 	else
 		echo 'No package manager detected'
 		return 1
