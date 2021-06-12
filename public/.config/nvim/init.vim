@@ -10,11 +10,10 @@ Plug 'airblade/vim-gitgutter'
 
 " navigation
 Plug 'tpope/vim-vinegar'
-Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_show_hidden = 1
-if executable('rg')
-	let g:ctrlp_user_command = 'rg --hidden -g ''!.git/'' --files --color=never %s'
-endif
+let $FZF_DEFAULT_COMMAND = 'rg --hidden -g ''!.git/'' --files'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+nmap <C-P> :FZF<CR>
 
 " linting & autocompletion
 Plug 'w0rp/ale'
