@@ -35,13 +35,13 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	elseif (coc#rpc#ready())
+		call CocActionAsync('doHover')
+	else
+		execute '!' . &keywordprg . " " . expand('<cword>')
+	endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -49,6 +49,12 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+
+" indentation
+set tabstop=4 "hard tabs are 4 spaces wide
+set shiftwidth=4 "for > command
+Plug 'tpope/sleuth'
+
 call plug#end()
 
 colorscheme base16-tomorrow-night
@@ -63,11 +69,6 @@ autocmd FocusGained * :checktime
 " clipboard
 set clipboard=unnamedplus " use the system clipboard (a clipboard tool needs to be installed, check :help clipboard-tool)
 set mouse=ar " all + middle click copy/paste
-
-" tabs
-set shiftwidth=4 "for > command
-set tabstop=4 "hard tabs are 4 spaces wide
-set noexpandtab "always insert tabs with the tab key
 
 " clear search highligh
 nnoremap <silent> <C-l> :nohl<CR><C-l>
