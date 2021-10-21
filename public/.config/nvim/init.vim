@@ -87,3 +87,5 @@ autocmd BufReadPost *
 " disable safe write that occasionally breaks watchers
 " see https://github.com/rollup/rollup/issues/1666#issuecomment-547613081
 set backupcopy=yes
+
+set spelllang+=fr

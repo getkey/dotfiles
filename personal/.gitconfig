@@ -24,8 +24,8 @@
 	branch-name = rev-parse --abbrev-ref HEAD
 	pu = !"git push --set-upstream origin $(git branch-name)"
 
-[credential "https://github.com"]
-	username = getkey
+[url "git@github.com:"]
+	insteadOf = https://github.com/
 
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
