@@ -19,7 +19,7 @@ nmap <C-P> :FZF<CR>
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
-let g:coc_global_extensions = ['coc-json', 'coc-css', 'coc-tsserver', 'coc-html', 'coc-svg', 'coc-yaml']
+let g:coc_global_extensions = ['coc-json', 'coc-css', 'coc-tsserver', 'coc-html', 'coc-svg', 'coc-yaml', 'coc-go']
 " https://github.com/neoclide/coc.nvim#example-vim-configuration
 set updatetime=300
 set cmdheight=2
