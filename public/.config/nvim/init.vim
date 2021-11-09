@@ -16,7 +16,16 @@ Plug 'junegunn/fzf.vim'
 nmap <C-P> :FZF<CR>
 
 " linting & autocompletion
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
+let g:ale_fixers = {
+\	'*': ['remove_trailing_lines', 'trim_whitespace'],
+\	'javascript': ['eslint'],
+\	'typescript': ['eslint'],
+\	'javascriptreact': ['eslint'],
+\	'typescriptreact': ['eslint'],
+\	'go': ['gofmt'],
+\}
+let g:ale_fix_on_save = 1
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
 let g:coc_global_extensions = ['coc-json', 'coc-css', 'coc-tsserver', 'coc-html', 'coc-svg', 'coc-yaml', 'coc-go']
@@ -80,9 +89,9 @@ autocmd FileType gitcommit setlocal textwidth=0 " don't restrict line width to 8
 
 " jumps to the last known position in a file after opening it (see :help last-position-jump)
 autocmd BufReadPost *
-	\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-	\ |   exe "normal! g`\""
-	\ | endif
+\	if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+\	|	exe "normal! g`\""
+\	| endif
 
 " disable safe write that occasionally breaks watchers
 " see https://github.com/rollup/rollup/issues/1666#issuecomment-547613081
