@@ -49,7 +49,6 @@ end
 
 set -x VISUAL 'nvim'
 set -x EDITOR 'nvim' # for the morons who think $EDITOR is the same as $VISUAL
-set -x OLIMEX 'getkey@getkey.eu'
 
 set -x LC_MESSAGES 'en_US.UTF-8' # for CLI programs
 # another language can be used for GUI programs by exporting it in ~/.xinitrc, ie export LC_MESSAGES=fr_FR.UTF-8
