@@ -14,6 +14,7 @@ let $FZF_DEFAULT_COMMAND = 'rg --hidden -g ''!.git/'' --files'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 nmap <C-P> :FZF<CR>
+nnoremap <silent> <Leader>rg :Rg <C-R><C-W><CR>
 
 " linting & autocompletion
 Plug 'dense-analysis/ale'
