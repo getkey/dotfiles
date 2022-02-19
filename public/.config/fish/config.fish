@@ -1,13 +1,5 @@
 set fish_greeting # Disable greeting
 
-function addtopath --description 'Attempts to add a directory to the PATH'
-	# $argv[1] directory to add
-
-	if test -d $argv[1]
-		set PATH $PATH $argv[1]
-	end
-end
-
 begin
 	if test -n "$XDG_DATA_HOME"
 		set HOME_BIN_PATH $XDG_DATA_HOME/bin
@@ -15,23 +7,23 @@ begin
 		set HOME_BIN_PATH $HOME/.local/bin
 	end
 
-	addtopath $HOME_BIN_PATH
+	fish_add_path -a $HOME_BIN_PATH
 end
 
-addtopath $HOME/.cargo/bin
+fish_add_path -a $HOME/.cargo/bin
 
 if type -fq yarn
 	# this is important because with nvm it might not always be $HOME/.yarn/bin
-	addtopath (yarn global bin)
+	fish_add_path -a (yarn global bin)
 end
 
 set -x ANDROID_HOME $HOME/Android/Sdk
-addtopath $ANDROID_HOME/tools
-addtopath $ANDROID_HOME/tools/bin
-addtopath $ANDROID_HOME/platform-tools
+fish_add_path -a $ANDROID_HOME/tools
+fish_add_path -a $ANDROID_HOME/tools/bin
+fish_add_path -a $ANDROID_HOME/platform-tools
 
 set -x GOPATH $HOME/go
-addtopath $GOPATH/bin
+fish_add_path -a $GOPATH/bin
 
 if test (uname) = 'Darwin'
 	set gcloud_path_script /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
