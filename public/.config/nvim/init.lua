@@ -27,14 +27,6 @@ autocmd FileType markdown,text,tex setlocal spell
 autocmd FileType gitcommit setlocal textwidth=0 " don't restrict line width to 80 characters
 ]])
 
--- jumps to the last known position in a file after opening it (see :help last-position-jump)
-vim.cmd([[
-autocmd BufReadPost *
-\      if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-\      |       exe "normal! g`\""
-\      | endif
-]])
-
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -100,6 +92,8 @@ return require('packer').startup(function(use)
 	vim.cmd('highlight IndentBlanklineChar guifg=' .. color_scheme.base02 .. ' gui=nocombine')
 
 	use 'tpope/vim-sleuth'
+
+	use 'ethanholz/nvim-lastplace'
 
 	use {
 		'neoclide/coc.nvim',
