@@ -85,6 +85,13 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-vinegar'
 
 	use 'github/copilot.vim'
+	vim.api.nvim_set_keymap(
+		'i',
+		'<Right>',
+		'copilot#Accept("<CR>")',
+		{ silent = true, script = true, expr = true }
+	)
+	vim.g.copilot_no_tab_map = true
 
 	use 'RRethy/vim-illuminate'
 
