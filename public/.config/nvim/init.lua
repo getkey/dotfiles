@@ -71,8 +71,14 @@ return require('packer').startup(function(use)
 	)
 	vim.api.nvim_set_keymap(
 		'n',
-		'<Leader>rg',
+		'<Leader>fiw',
 		':Telescope grep_string<CR>',
+		{}
+	)
+	vim.api.nvim_set_keymap(
+		'n',
+		'<Leader>ff',
+		':Telescope live_grep<CR>',
 		{}
 	)
 
@@ -87,7 +93,7 @@ return require('packer').startup(function(use)
 	use 'github/copilot.vim'
 	vim.api.nvim_set_keymap(
 		'i',
-		'<Right>',
+		'<Enter>',
 		'copilot#Accept("<CR>")',
 		{ silent = true, script = true, expr = true }
 	)
