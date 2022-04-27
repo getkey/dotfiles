@@ -129,7 +129,6 @@ in {
 		# Misc
 		keepassxc
 		encfs
-		libnotify
 		wmctrl
 		tree
 		appimage-run
@@ -151,5 +150,49 @@ in {
 		enable = true;
 		provider = "geoclue2";
 		tray = true;
+	};
+
+	systemd.user.services = {
+		go-to-bed-warning = {
+			Unit = {
+				Description = "Warns that the computer will shut down to force me to go to bed";
+				Requires = "graphical-session.target";
+			};
+			Service = {
+				ExecStart = "${pkgs.libnotify}/bin/notify-send -u critical -t 0 'You will be forced to go to bed in 10 minutes'";
+			};
+		};
+		go-to-bed = {
+			Unit = {
+				Description = "Shuts the computer down to force me to go to bed";
+				Requires = "default.target";
+			};
+			Service = {
+				ExecStart = "${pkgs.systemd}/bin/shutdown";
+			};
+		};
+	};
+
+	systemd.user.timers = {
+		go-to-bed-warning = {
+			Unit = {
+				Description = "Warns that the computer will shut down to force me to go to bed";
+				Requires = "timers.target";
+			};
+			Timer = {
+				OnCalendar = "*-*-* 22:50:00";
+				Unit = "go-to-bed-warning.service";
+			};
+		};
+		go-to-bed = {
+			Unit = {
+				Description = "Shuts the computer down to force me to go to bed";
+				Requires = "timers.target";
+			};
+			Timer = {
+				OnCalendar = "*-*-* 23:00:00";
+				Unit = "go-to-bed.service";
+			};
+		};
 	};
 }

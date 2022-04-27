@@ -65,7 +65,6 @@ project_root=$(pwd -P) # get cwd so we are sure `$project_root` is not a symlink
 link='ln -sf'
 
 recursive_setup 'public' "$link"
-recursive_setup 'copy' 'cp'
 
 if [ $USER = 'getkey' -o $USER = 'mourerj' -o $USER = 'julien' ]; then
 	recursive_setup 'personal' "$link"
