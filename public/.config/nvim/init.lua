@@ -108,6 +108,8 @@ return require('packer').startup(function(use)
 
 	use 'ethanholz/nvim-lastplace'
 
+	use 'leafOfTree/vim-svelte-plugin'
+
 	use {
 		'neoclide/coc.nvim',
 		branch = 'release'
