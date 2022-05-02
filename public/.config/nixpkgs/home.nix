@@ -177,21 +177,25 @@ in {
 		go-to-bed-warning = {
 			Unit = {
 				Description = "Warns that the computer will shut down to force me to go to bed";
-				Requires = "timers.target";
 			};
 			Timer = {
 				OnCalendar = "*-*-* 22:50:00";
 				Unit = "go-to-bed-warning.service";
 			};
+			Install = {
+				WantedBy = ["timers.target"];
+			};
 		};
 		go-to-bed = {
 			Unit = {
 				Description = "Shuts the computer down to force me to go to bed";
-				Requires = "timers.target";
 			};
 			Timer = {
 				OnCalendar = "*-*-* 23:00:00";
 				Unit = "go-to-bed.service";
+			};
+			Install = {
+				WantedBy = ["timers.target"];
 			};
 		};
 	};
