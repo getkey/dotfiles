@@ -1,5 +1,7 @@
 function ud
-	if command -s yay > /dev/null
+	if command -s nixos-rebuild > /dev/null
+		sudo nixos-rebuild switch --upgrade-all
+	else if command -s yay > /dev/null
 		yay
 	else if command -s pacman > /dev/null
 		sudo pacman -Syu

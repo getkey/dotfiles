@@ -20,6 +20,8 @@ in {
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
 
+	nixpkgs.config.allowUnfree = true;
+
 	home.packages = with pkgs; [
 		# Editors
 		unstable.neovim
@@ -36,6 +38,7 @@ in {
 		kubectl
 		kubectx
 		heroku
+		gh
 
 		# Network
 		whois
@@ -51,7 +54,7 @@ in {
 		# Dev
 		nodejs
 		yarn
-		go
+		unstable.go
 		rustc
 		cargo
 		rustfmt
@@ -133,6 +136,7 @@ in {
 		tree
 		appimage-run
 		xclip # needed for NeoVim to share the clipboard with the DE
+		dropbox
 	];
 
 	home.sessionVariables = {
@@ -142,7 +146,7 @@ in {
 	# Cloud
 	services.syncthing.enable = true;
 	services.nextcloud-client.enable = true;
-	services.dropbox.enable = true;
+	# services.dropbox.enable = true; # doesn't work
 
 	services.pulseeffects.enable = true;
 
