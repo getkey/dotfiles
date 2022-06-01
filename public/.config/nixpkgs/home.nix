@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
-let
-	unstable = import <nixos-unstable> {};
-in {
+{
 	# Home Manager needs a bit of information about you and the
 	# paths it should manage.
 	home.username = "getkey";
@@ -24,8 +22,8 @@ in {
 
 	home.packages = with pkgs; [
 		# Editors
-		unstable.neovim
-		unstable.neovim-qt
+		neovim
+		neovim-qt
 		meld
 
 		# Terminal emulators
@@ -54,13 +52,13 @@ in {
 		# Dev
 		nodejs
 		yarn
-		unstable.go
+		go
 		rustc
 		cargo
 		rustfmt
 		clippy
 		gcc
-		unstable.deno
+		deno
 
 		# Spell checking
 		hunspell
