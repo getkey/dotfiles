@@ -25,6 +25,7 @@
 		neovim
 		neovim-qt
 		meld
+		jetbrains.idea-community
 
 		# Terminal emulators
 		guake
@@ -52,13 +53,14 @@
 		# Dev
 		nodejs
 		yarn
-		go
+		go_1_18
 		rustc
 		cargo
 		rustfmt
 		clippy
 		gcc
 		deno
+		jdk
 
 		# Spell checking
 		hunspell
