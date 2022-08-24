@@ -15,7 +15,7 @@ vim.opt.clipboard = 'unnamedplus' -- use the system clipboard (a clipboard tool 
 vim.opt.mouse = 'ar' -- all + middle click copy/paste
 
 -- clear search highlight
-vim.api.nvim_set_keymap(
+vim.keymap.set(
 	'n',
 	'<silent><C-l>',
 	':nohlsearch<CR><C-l>',

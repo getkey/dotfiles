@@ -62,7 +62,7 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-vinegar'
 
 	use 'github/copilot.vim'
-	vim.api.nvim_set_keymap(
+	vim.keymap.set(
 		'i',
 		'<S-Tab>',
 		'copilot#Accept("")',
@@ -91,11 +91,17 @@ return require('packer').startup(function(use)
 	vim.opt.updatetime = 300
 	vim.opt.cmdheight = 2
 	vim.opt.shortmess:append('c')
-	vim.api.nvim_set_keymap(
+	vim.keymap.set(
 		'n',
 		'<Leader>rn',
 		'<Plug>(coc-rename)',
 		{  }
+	)
+	vim.keymap.set(
+		'i',
+		'<CR>',
+		'coc#pum#visible() ? coc#pum#confirm() : "<CR>"',
+		{ expr = true }
 	)
 
 	use 'dense-analysis/ale'
