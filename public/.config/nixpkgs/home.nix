@@ -127,7 +127,6 @@
 		# Games
 		minecraft
 		teeworlds
-		steam
 
 		# Misc
 		keepassxc
