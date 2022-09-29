@@ -49,6 +49,8 @@
 		direnv
 		fzf
 		file
+		dos2unix
+		tree
 
 		# Dev
 		nodejs
@@ -61,6 +63,7 @@
 		gcc
 		deno
 		jdk
+		python3
 
 		# Spell checking
 		hunspell
@@ -68,7 +71,7 @@
 		hunspellDicts.en-us-large
 
 		# Messaging
-		discord
+		(discord.override { nss = nss_latest; }) # https://github.com/NixOS/nixpkgs/issues/78961
 		slack
 		signal-desktop
 		zoom-us
@@ -132,9 +135,9 @@
 		keepassxc
 		encfs
 		wmctrl
-		tree
 		appimage-run
 		xclip # needed for NeoVim to share the clipboard with the DE
+		xsel
 		dropbox
 	];
 
