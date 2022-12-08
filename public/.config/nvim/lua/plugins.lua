@@ -20,15 +20,11 @@ return require('packer').startup(function(use)
 	require('base16-colorscheme').setup(color_scheme)
 	use {
 		'lewis6991/gitsigns.nvim',
-		requires = {
-			'nvim-lua/plenary.nvim'
-		},
 		tag = 'release',
 		config = function()
 			require('gitsigns').setup()
 		end
 	}
-	require('gitsigns').setup()
 
 	use {
 		'nvim-telescope/telescope.nvim',
@@ -103,6 +99,7 @@ return require('packer').startup(function(use)
 		'coc#pum#visible() ? coc#pum#confirm() : "<CR>"',
 		{ expr = true }
 	)
+	vim.cmd('autocmd BufWritePre *.go :silent call CocAction(\'runCommand\', \'editor.action.organizeImport\')')
 
 	use 'dense-analysis/ale'
 	vim.g.ale_fixers = {

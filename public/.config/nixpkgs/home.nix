@@ -38,6 +38,7 @@
 		kubectx
 		heroku
 		gh
+		flyctl
 
 		# Network
 		whois
@@ -55,7 +56,8 @@
 		# Dev
 		nodejs
 		yarn
-		go_1_18
+		go
+		gopls
 		rustc
 		cargo
 		rustfmt
@@ -71,7 +73,7 @@
 		hunspellDicts.en-us-large
 
 		# Messaging
-		(discord.override { nss = nss_latest; }) # https://github.com/NixOS/nixpkgs/issues/78961
+		discord
 		slack
 		signal-desktop
 		zoom-us
