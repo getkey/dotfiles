@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-vinegar'
 
 	use 'github/copilot.vim'
-	vim.keymap.set(
+	vim.api.nvim_set_keymap(
 		'i',
 		'<S-Tab>',
 		'copilot#Accept("")',
