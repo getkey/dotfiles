@@ -26,7 +26,7 @@ set -x GOPATH $HOME/go
 fish_add_path -a $GOPATH/bin
 
 if test (uname) = 'Darwin'
-	set gcloud_path_script /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+	set gcloud_path_script (brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 else
 	set gcloud_path_script /opt/google-cloud-sdk/path.fish.inc
 end
