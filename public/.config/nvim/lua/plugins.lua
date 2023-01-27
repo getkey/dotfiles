@@ -111,6 +111,7 @@ return require('packer').startup(function(use)
 		['go'] = {'gofmt'},
 		['rust'] = {'rustfmt'}
 	}
+	vim.g.ale_rust_rustfmt_options = '--edition 2021' -- see https://www.reddit.com/r/rust/comments/mbhemw/soved_my_rust_format_problem_in_vim_and_ale/
 	vim.g.ale_fix_on_save = 1
 
 	-- Automatically set up your configuration after cloning packer.nvim
