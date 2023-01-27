@@ -39,6 +39,12 @@ if type -fq direnv
 	eval (direnv hook fish)
 end
 
+# https://nix-community.github.io/home-manager/index.html#_why_are_the_session_variables_not_set
+set session_vars $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+if test -f $session_vars
+	tail -n +5 $session_vars | source
+end
+
 set -x VISUAL 'nvim'
 set -x EDITOR 'nvim' # for the morons who think $EDITOR is the same as $VISUAL
 
