@@ -28,6 +28,7 @@
 		nodePackages.typescript-language-server
 		meld
 		jetbrains.idea-community
+		jetbrains.pycharm-community
 
 		# Terminal emulators
 		guake
@@ -60,10 +61,7 @@
 		yarn
 		go
 		gopls
-		rustc
-		cargo
-		rustfmt
-		clippy
+		rustup
 		gcc
 		deno
 		jdk
@@ -71,8 +69,6 @@
 
 		# Spell checking
 		hunspell
-		hunspellDicts.fr-reforme1990
-		hunspellDicts.en-us-large
 
 		# Messaging
 		discord
@@ -94,6 +90,7 @@
 		# Recording
 		obs-studio
 		gnome.gnome-screenshot
+		audacity
 
 		# Medias
 		mpv
@@ -147,6 +144,7 @@
 
 	home.sessionVariables = {
 		RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+		DICPATH = "${pkgs.hunspellDicts.en-us-large}/share/hunspell:${pkgs.hunspellDicts.fr-reforme1990}/share/hunspell";
 	};
 
 	# Cloud
