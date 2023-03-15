@@ -107,6 +107,11 @@ return require('packer').startup(function(use)
 		}),
 	})
 
+	local on_attach = function(client, bufnr)
+		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+		vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
+	end
+
 	local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 	local lspconfig = require('lspconfig')
@@ -114,7 +119,7 @@ return require('packer').startup(function(use)
 	local servers = { 'tsserver', 'gopls' }
 	for _, lsp in ipairs(servers) do
 		lspconfig[lsp].setup {
-			-- on_attach = my_custom_on_attach,
+			on_attach = on_attach,
 			capabilities = capabilities,
 		}
 	end
