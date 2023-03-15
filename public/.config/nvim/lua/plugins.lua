@@ -77,30 +77,6 @@ return require('packer').startup(function(use)
 
 	use 'leafOfTree/vim-svelte-plugin'
 
-	use {
-		'neoclide/coc.nvim',
-		branch = 'release'
-	}
-	-- https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
-	vim.g.coc_global_extensions = {'coc-json', 'coc-css', 'coc-tsserver', 'coc-html', 'coc-svg', 'coc-yaml', 'coc-go', 'coc-rust-analyzer'}
-	-- https://github.com/neoclide/coc.nvim#example-vim-configuration
-	vim.opt.updatetime = 300
-	vim.opt.cmdheight = 2
-	vim.opt.shortmess:append('c')
-	vim.keymap.set(
-		'n',
-		'<Leader>rn',
-		'<Plug>(coc-rename)',
-		{  }
-	)
-	vim.keymap.set(
-		'i',
-		'<CR>',
-		'coc#pum#visible() ? coc#pum#confirm() : "<CR>"',
-		{ expr = true }
-	)
-	vim.cmd('autocmd BufWritePre *.go :silent call CocAction(\'runCommand\', \'editor.action.organizeImport\')')
-
 	use 'dense-analysis/ale'
 	vim.g.ale_fixers = {
 		['*'] = {'remove_trailing_lines', 'trim_whitespace'},
@@ -113,6 +89,44 @@ return require('packer').startup(function(use)
 	}
 	vim.g.ale_rust_rustfmt_options = '--edition 2021' -- see https://www.reddit.com/r/rust/comments/mbhemw/soved_my_rust_format_problem_in_vim_and_ale/
 	vim.g.ale_fix_on_save = 1
+
+	use 'neovim/nvim-lspconfig'
+
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/nvim-cmp'
+
+	use 'hrsh7th/cmp-vsnip'
+	use 'hrsh7th/vim-vsnip'
+
+
+	local cmp = require'cmp'
+	cmp.setup({
+		snippet = {
+			expand = function(args)
+				vim.fn['vsnip#anonymous'](args.body)
+			end,
+		},
+		mapping = cmp.mapping.preset.insert({
+			['<CR>'] = cmp.mapping.confirm({ select = true }),
+		}),
+		sources = cmp.config.sources({
+			{ name = 'nvim_lsp' },
+			{ name = 'path' }
+		}),
+	})
+
+	local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+	local lspconfig = require('lspconfig')
+
+	local servers = { 'tsserver', 'gopls' }
+	for _, lsp in ipairs(servers) do
+		lspconfig[lsp].setup {
+			-- on_attach = my_custom_on_attach,
+			capabilities = capabilities,
+		}
+	end
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
