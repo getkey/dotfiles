@@ -8,16 +8,8 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use 'RRethy/nvim-base16'
-	local color_scheme = {
-		-- base16-tomorrow-night with tweaked base01 and base02
-		-- mainly to make vim-illuminate look nice in visual mode
-		-- until https://github.com/RRethy/vim-illuminate/issues/81 gets done
-		base00 = '#1d1f21', base01 = '#2e3136', base02 = '#41464D', base03 = '#969896',
-		base04 = '#b4b7b4', base05 = '#c5c8c6', base06 = '#e0e0e0', base07 = '#ffffff',
-		base08 = '#cc6666', base09 = '#de935f', base0A = '#f0c674', base0B = '#b5bd68',
-		base0C = '#8abeb7', base0D = '#81a2be', base0E = '#b294bb', base0F = '#a3685a'
-	}
-	require('base16-colorscheme').setup(color_scheme)
+	vim.cmd.colorscheme('base16-tomorrow-night')
+
 	use {
 		'lewis6991/gitsigns.nvim',
 		tag = 'release',
@@ -69,7 +61,6 @@ return require('packer').startup(function(use)
 	use 'RRethy/vim-illuminate'
 
 	use 'lukas-reineke/indent-blankline.nvim'
-	vim.cmd('highlight IndentBlanklineChar guifg=' .. color_scheme.base02 .. ' gui=nocombine')
 
 	use 'tpope/vim-sleuth'
 
