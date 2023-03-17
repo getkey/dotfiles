@@ -36,7 +36,7 @@
 
 		# DevOps
 		awscli2
-		google-cloud-sdk
+		(google-cloud-sdk.withExtraComponents (with google-cloud-sdk.components; [gke-gcloud-auth-plugin]))
 		kubectl
 		kubectx
 		heroku
