@@ -59,8 +59,9 @@
 		# Dev
 		nodejs
 		yarn
-		go
+		go_1_20
 		gopls
+		gotools
 		rustup
 		gcc
 		deno

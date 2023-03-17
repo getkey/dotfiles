@@ -75,7 +75,7 @@ return require('packer').startup(function(use)
 		['typescript'] = {'eslint'},
 		['javascriptreact'] = {'eslint'},
 		['typescriptreact'] = {'eslint'},
-		['go'] = {'gofmt'},
+		['go'] = {'gofmt', 'goimports'},
 		['rust'] = {'rustfmt'}
 	}
 	vim.g.ale_rust_rustfmt_options = '--edition 2021' -- see https://www.reddit.com/r/rust/comments/mbhemw/soved_my_rust_format_problem_in_vim_and_ale/
