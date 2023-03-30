@@ -1,3 +1,3 @@
-function k -d 'kubectl alias'
+function k -w kubectl
 	kubectl $argv
 end

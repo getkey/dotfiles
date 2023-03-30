@@ -16,6 +16,6 @@ function ud
 	end
 
 	if command -s yarn > /dev/null
-		yarn global upgrade
+		yarn global upgrade --latest
 	end
 end
