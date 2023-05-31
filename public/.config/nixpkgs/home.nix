@@ -135,7 +135,7 @@
 
 		# Misc
 		keepassxc
-		encfs
+		gocryptfs
 		wmctrl
 		appimage-run
 		xclip # needed for NeoVim to share the clipboard with the DE

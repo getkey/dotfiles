@@ -25,6 +25,9 @@ fish_add_path -a $ANDROID_HOME/platform-tools
 set -x GOPATH $HOME/go
 fish_add_path -a $GOPATH/bin
 
+# Dart
+fish_add_path -a $HOME/.pub-cache/bin
+
 if test (uname) = 'Darwin'
 	set gcloud_path_script (brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 else
