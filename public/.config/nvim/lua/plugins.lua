@@ -80,6 +80,7 @@ return require('packer').startup(function(use)
 	}
 	vim.g.ale_rust_rustfmt_options = '--edition 2021' -- see https://www.reddit.com/r/rust/comments/mbhemw/soved_my_rust_format_problem_in_vim_and_ale/
 	vim.g.ale_fix_on_save = 1
+	vim.g.ale_virtualtext_cursor = 'disable'
 
 	use 'neovim/nvim-lspconfig'
 

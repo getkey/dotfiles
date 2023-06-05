@@ -20,7 +20,7 @@
 	boot.loader.efi.canTouchEfiVariables = true;
 
 	boot.supportedFilesystems = [ "ntfs" ];
-	boot.cleanTmpDir = true;
+	boot.tmp.cleanOnBoot = true;
 
 	boot.kernelParams = [
 		"processor.max_cstate=1" # Ryzen is known to be unstable on higher C-states, this should fix it
@@ -70,6 +70,7 @@
 		];
 		shell = pkgs.fish;
 	};
+	programs.fish.enable = true;
 	home-manager.users.getkey = import /home/getkey/.config/nixpkgs/home.nix;
 
 	programs.adb.enable = true;
