@@ -30,13 +30,13 @@ return require('packer').startup(function(use)
 	)
 	vim.api.nvim_set_keymap(
 		'n',
-		'<Leader>fiw',
+		'<C-S-F>',
 		':Telescope grep_string<CR>',
 		{}
 	)
 	vim.api.nvim_set_keymap(
 		'n',
-		'<Leader>ff',
+		'<C-F>',
 		':Telescope live_grep<CR>',
 		{}
 	)

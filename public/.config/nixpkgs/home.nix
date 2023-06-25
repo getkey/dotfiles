@@ -55,6 +55,7 @@
 		file
 		dos2unix
 		tree
+		jq
 
 		# Dev
 		nodejs
