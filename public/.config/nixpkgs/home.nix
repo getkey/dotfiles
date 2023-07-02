@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-{
+let
+	unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in {
 	# Home Manager needs a bit of information about you and the
 	# paths it should manage.
 	home.username = "getkey";
@@ -40,7 +42,7 @@
 		kubectx
 		heroku
 		gh
-		flyctl
+		unstable.flyctl
 
 		# Network
 		whois
