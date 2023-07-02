@@ -24,7 +24,6 @@
 		# Editors
 		neovim
 		neovim-qt
-		helix
 		nodePackages.typescript-language-server
 		meld
 		jetbrains.idea-community
