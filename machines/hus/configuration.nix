@@ -77,6 +77,7 @@
 	services.gvfs.enable = true;
 
 	virtualisation.docker.enable = true;
+	virtualisation.podman.enable = true;
 
 	# used by redshift
 	services.geoclue2.enable = true;

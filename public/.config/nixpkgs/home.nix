@@ -60,15 +60,14 @@ in {
 
 		# Dev
 		nodejs
-		yarn
 		go_1_20
 		gopls
 		gotools
 		rustup
 		gcc
-		deno
 		jdk
 		python3
+		hugo
 
 		# Spell checking
 		hunspell
