@@ -1,5 +1,3 @@
-require('plugins')
-
 vim.opt.number = true
 
 vim.opt.tabstop = 4
@@ -28,3 +26,5 @@ autocmd BufNewFile,BufRead .envrc set filetype=sh " it's executed in a bash sub-
 autocmd FileType markdown,text,tex setlocal spell
 autocmd FileType gitcommit setlocal textwidth=0 " don't restrict line width to 80 characters
 ]])
+
+require('plugins')
