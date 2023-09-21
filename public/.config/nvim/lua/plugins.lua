@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -48,12 +48,20 @@ require("lazy").setup({
 		end,
 	},
 	'tpope/vim-vinegar',
- 	{
-		'github/copilot.vim',
-		lazy = false,
-		keys = {
-			{ "<S-Tab>", "copilot#Accept(\"\")", mode = "i", expr = true, script = true, silent = true },
-		},
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = {
+					auto_trigger = true,
+					keymap = {
+						accept = "<S-Tab>",
+					},
+				}
+			})
+		end,
 	},
 	'RRethy/vim-illuminate',
 	'lukas-reineke/indent-blankline.nvim',
@@ -98,7 +106,7 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
-		{ name = 'path' }
+		{ name = 'path' },
 	}),
 })
 
