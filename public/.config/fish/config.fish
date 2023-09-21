@@ -38,7 +38,8 @@ if test -f $gcloud_path_script
 	source $gcloud_path_script
 end
 
-if type -fq direnv
+# on NixOS, this is configured through home-manger
+if test (uname) = 'Darwin'; and type -fq direnv
 	eval (direnv hook fish)
 end
 

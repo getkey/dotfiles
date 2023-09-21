@@ -51,7 +51,6 @@ in {
 		# General dev CLI tools
 		git
 		ripgrep
-		direnv
 		fzf
 		file
 		dos2unix
@@ -160,6 +159,12 @@ in {
 		enable = true;
 		provider = "geoclue2";
 		tray = true;
+	};
+
+	programs.direnv = {
+		enable = true;
+		enableFishIntegration = true;
+		nix-direnv.enable = true;
 	};
 
 	systemd.user.services = {
