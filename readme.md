@@ -2,11 +2,14 @@
 
 My dotfiles.
 
-# Install
+## Install
+
 ```sh
 ./bootstrap.sh
 ```
-You should run this command at least every time a new file is commited.
 
-If there are conflicts between my dotfiles and yours the script will ask you what to do.
-It won't link files that contain my name unless your username is `getkey` or `mourerj`.
+This script will link the dotfiles in this repository with the homedir. It's basically equivalent to [GNU Stow](https://www.gnu.org/software/stow/).
+It should be ran every time a new file is added.
+
+This script is safe, if it finds conflicts, it will ask what to do.
+It won't link files that contain my name unless `$USER` is `getkey` or `mourerj`.

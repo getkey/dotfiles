@@ -2,9 +2,6 @@
 	name = Julien Mourer
 	email = getkey@getkey.eu
 
-[core]
-	excludesfile = ~/.gitignore
-
 [push]
 	default = simple
 
