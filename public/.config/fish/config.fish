@@ -17,10 +17,18 @@ if type -fq yarn
 	fish_add_path -a (yarn global bin)
 end
 
-set -x ANDROID_HOME $HOME/Android/Sdk
-fish_add_path -a $ANDROID_HOME/tools
-fish_add_path -a $ANDROID_HOME/tools/bin
-fish_add_path -a $ANDROID_HOME/platform-tools
+if test (uname) = 'Darwin'
+	set tentative_android_home /Users/$USER/Library/Android/sdk
+else
+	set tentative_android_home $HOME/Android/Sdk
+end
+
+if test -d $tentative_android_home
+	set -x ANDROID_HOME $tentative_android_home
+	fish_add_path -a $ANDROID_HOME/tools
+	fish_add_path -a $ANDROID_HOME/tools/bin
+	fish_add_path -a $ANDROID_HOME/platform-tools
+end
 
 set -x GOPATH $HOME/go
 fish_add_path -a $GOPATH/bin
