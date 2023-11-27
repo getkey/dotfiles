@@ -68,6 +68,10 @@ in {
 		jdk
 		python3
 		hugo
+		nodePackages.typescript
+		nodePackages.wrangler
+		unstable.nodePackages.eas-cli
+		sops
 
 		# Spell checking
 		hunspell
@@ -83,6 +87,7 @@ in {
 		ffmpeg
 		imagemagick
 		optipng
+		nodePackages.svgo
 		zip
 		unzip
 		gnome.file-roller
