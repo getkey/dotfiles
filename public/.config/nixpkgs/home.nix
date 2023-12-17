@@ -43,7 +43,7 @@ in {
 		heroku
 		gh
 		unstable.flyctl
-		unstable.corepack # will be released in NixOS 23.11
+		corepack
 
 		# Network
 		whois
