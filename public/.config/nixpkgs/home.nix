@@ -38,6 +38,7 @@ in {
 		# DevOps
 		awscli2
 		(google-cloud-sdk.withExtraComponents (with google-cloud-sdk.components; [gke-gcloud-auth-plugin]))
+		google-cloud-sql-proxy
 		kubectl
 		kubectx
 		heroku
@@ -57,6 +58,7 @@ in {
 		dos2unix
 		tree
 		jq
+		moreutils
 
 		# Dev
 		nodejs
