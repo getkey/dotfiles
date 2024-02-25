@@ -72,7 +72,6 @@ in {
 		hugo
 		nodePackages.typescript
 		nodePackages.wrangler
-		unstable.nodePackages.eas-cli
 		sops
 
 		# Spell checking
@@ -112,7 +111,6 @@ in {
 		# Office
 		evince
 		libreoffice
-		geogebra
 		zettlr
 		foliate
 
