@@ -68,6 +68,7 @@
 			"networkmanager"
 			"adbusers"
 			"dialout" # access serial ports for Arduino
+			"docker"
 		];
 		shell = pkgs.fish;
 	};
@@ -78,6 +79,7 @@
 	services.gvfs.enable = true;
 
 	virtualisation.podman.enable = true;
+	virtualisation.docker.enable = true;
 
 	# used by redshift
 	services.geoclue2.enable = true;
