@@ -59,10 +59,11 @@ in {
 		tree
 		jq
 		moreutils
+		gnupg
 
 		# Dev
 		nodejs
-		go_1_20
+		go
 		gopls
 		gotools
 		rustup
@@ -83,6 +84,7 @@ in {
 		signal-desktop
 		zoom-us
 		thunderbird
+		unstable.beeper
 
 		# File formats
 		ffmpeg
