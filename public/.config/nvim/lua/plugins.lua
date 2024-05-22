@@ -33,6 +33,8 @@ require("lazy").setup({
 			{ "<C-P>", ":Telescope find_files find_command=rg,--ignore,--hidden,-g,!.git/,--files<CR>" },
 			{ "<C-S-F>", ":Telescope grep_string<CR>" },
 			{ "<C-F>", ":Telescope live_grep<CR>" },
+			{ "gr", ":Telescope lsp_references<CR>" },
+			{ "gd", ":Telescope lsp_definitions<CR>" },
 		},
 	},
 	{
@@ -111,8 +113,7 @@ cmp.setup({
 })
 
 local on_attach = function(client, bufnr)
-	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-	vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
+	vim.keymap.set('n', '<Leader>cr', vim.lsp.buf.rename, bufopts)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
