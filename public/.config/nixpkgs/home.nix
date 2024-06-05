@@ -74,6 +74,7 @@ in {
 		nodePackages.typescript
 		nodePackages.wrangler
 		sops
+		terraform
 
 		# Spell checking
 		hunspell
@@ -138,7 +139,6 @@ in {
 		openscad
 
 		# Games
-		minecraft
 		teeworlds
 
 		# Misc

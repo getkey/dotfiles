@@ -40,16 +40,18 @@
 	services.xserver.videoDrivers = [ "amdgpu" ];
 	services.xserver.desktopManager.cinnamon.enable = true;
 	services.cinnamon.apps.enable = false;
-	services.xserver.xkbOptions = "caps:none";
 
 	# The filesystem is encrypted with LUKS, so enable autoLogin
 	services.xserver.displayManager.lightdm.enable = true;
-	services.xserver.displayManager.autoLogin.enable = true;
-	services.xserver.displayManager.autoLogin.user = "getkey";
+	services.displayManager.autoLogin = {
+		enable = true;
+		user = "getkey";
+	};
 
 	# Configure keymap in X11
-	services.xserver.layout = "us";
-	services.xserver.xkbVariant = "colemak";
+	services.xserver.xkb.layout = "us";
+	services.xserver.xkb.variant = "colemak";
+	services.xserver.xkb.options = "caps:none";
 
 	i18n.supportedLocales = [ "C.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" "fr_FR.UTF-8/UTF-8" ];
 
