@@ -29,7 +29,6 @@ in {
 		nodePackages.typescript-language-server
 		meld
 		jetbrains.idea-community
-		jetbrains.pycharm-community
 
 		# Terminal emulators
 		guake
@@ -41,7 +40,6 @@ in {
 		google-cloud-sql-proxy
 		kubectl
 		kubectx
-		heroku
 		gh
 		unstable.flyctl
 		corepack
@@ -132,7 +130,6 @@ in {
 
 		# Download
 		transmission-gtk
-		youtube-dl
 
 		# 3D printing
 		cura
