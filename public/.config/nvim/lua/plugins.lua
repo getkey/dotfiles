@@ -69,6 +69,20 @@ require("lazy").setup({
 	'lukas-reineke/indent-blankline.nvim',
 	'tpope/vim-sleuth',
 	'ethanholz/nvim-lastplace',
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			local configs = require("nvim-treesitter.configs")
+
+			configs.setup({
+				ensure_installed = { "lua", "javascript", "html", "css", "json", "typescript", "go", "gomod", "gosum", "yaml" },
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end
+	},
 	'neovim/nvim-lspconfig',
 
 	'hrsh7th/cmp-nvim-lsp',
