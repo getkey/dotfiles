@@ -73,6 +73,7 @@ in {
 		nodePackages.wrangler
 		sops
 		terraform
+		vscode-langservers-extracted
 
 		# Spell checking
 		hunspell

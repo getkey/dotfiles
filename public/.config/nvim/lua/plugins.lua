@@ -69,23 +69,6 @@ require("lazy").setup({
 	'lukas-reineke/indent-blankline.nvim',
 	'tpope/vim-sleuth',
 	'ethanholz/nvim-lastplace',
-	{
-		'dense-analysis/ale',
-		config = function()
-			vim.g.ale_fixers = {
-				['*'] = {'remove_trailing_lines', 'trim_whitespace'},
-				['javascript'] = {'eslint'},
-				['typescript'] = {'eslint'},
-				['javascriptreact'] = {'eslint'},
-				['typescriptreact'] = {'eslint'},
-				['go'] = {'gofmt', 'goimports'},
-				['rust'] = {'rustfmt'}
-			}
-			vim.g.ale_rust_rustfmt_options = '--edition 2021' -- see https://www.reddit.com/r/rust/comments/mbhemw/soved_my_rust_format_problem_in_vim_and_ale/
-			vim.g.ale_fix_on_save = 1
-			vim.g.ale_virtualtext_cursor = 'disable'
-		end,
-	},
 	'neovim/nvim-lspconfig',
 
 	'hrsh7th/cmp-nvim-lsp',
@@ -94,6 +77,13 @@ require("lazy").setup({
 
 	'hrsh7th/cmp-vsnip',
 	'hrsh7th/vim-vsnip',
+
+	{
+		'lukas-reineke/lsp-format.nvim',
+		config = function()
+			require("lsp-format").setup {}
+		end,
+	},
 })
 
 local cmp = require'cmp'
@@ -114,13 +104,14 @@ cmp.setup({
 
 local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<Leader>cr', vim.lsp.buf.rename, bufopts)
+	require("lsp-format").on_attach(client, bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lspconfig = require('lspconfig')
 
-local servers = { 'tsserver', 'gopls' }
+local servers = { 'tsserver', 'gopls', 'eslint' }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup {
 		on_attach = on_attach,
