@@ -70,13 +70,10 @@ in {
 		python3
 		hugo
 		nodePackages.typescript
-		nodePackages.wrangler
 		sops
 		terraform
 		vscode-langservers-extracted
-
-		# Spell checking
-		hunspell
+		yaml-language-server
 
 		# Messaging
 		discord
@@ -84,7 +81,6 @@ in {
 		signal-desktop
 		zoom-us
 		thunderbird
-		unstable.beeper
 
 		# File formats
 		ffmpeg
@@ -109,8 +105,10 @@ in {
 		xmp
 		pulseeffects-legacy
 		milkytracker
+		spotify
 
 		# Office
+		hunspell
 		evince
 		libreoffice
 		zettlr
@@ -128,6 +126,7 @@ in {
 		htop
 		baobab
 		gparted
+		man-pages-posix
 
 		# Download
 		transmission-gtk
