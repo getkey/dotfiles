@@ -25,6 +25,15 @@ require("lazy").setup({
 		end,
 	},
 	{
+		"ruifm/gitlinker.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = function()
+			require('gitlinker').setup()
+		end,
+	},
+	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -125,7 +134,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lspconfig = require('lspconfig')
 
-local servers = { 'tsserver', 'gopls', 'eslint' }
+local servers = { 'ts_ls', 'gopls', 'eslint' }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup {
 		on_attach = on_attach,
