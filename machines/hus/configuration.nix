@@ -55,10 +55,6 @@
 
 	i18n.supportedLocales = [ "C.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" "fr_FR.UTF-8/UTF-8" ];
 
-	# Enable sound.
-	sound.enable = true;
-	hardware.pulseaudio.enable = true;
-
 	nixpkgs.config.allowUnfree = true;
 
 	# Define a user account. Don't forget to set a password with ‘passwd’.

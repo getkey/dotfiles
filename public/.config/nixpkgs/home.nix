@@ -32,7 +32,7 @@ in {
 
 		# Terminal emulators
 		guake
-		gnome.gnome-terminal
+		gnome-terminal
 
 		# DevOps
 		awscli2
@@ -89,21 +89,20 @@ in {
 		nodePackages.svgo
 		zip
 		unzip
-		gnome.file-roller
+		file-roller
 		lame
 		flac
 
 		# Recording
 		obs-studio
-		gnome.gnome-screenshot
+		gnome-screenshot
 		audacity
 
 		# Medias
 		mpv
-		gnome.eog
+		eog
 		quodlibet-full
 		xmp
-		pulseeffects-legacy
 		milkytracker
 		spotify
 
@@ -113,6 +112,9 @@ in {
 		libreoffice
 		zettlr
 		foliate
+		dropbox
+		transmission_4-gtk
+		appimage-run
 
 		# Image editing
 		inkscape
@@ -128,24 +130,21 @@ in {
 		gparted
 		man-pages-posix
 
-		# Download
-		transmission-gtk
-
 		# 3D printing
-		cura
+		# cura
 		openscad
 
 		# Games
 		teeworlds
 
-		# Misc
+		# Crypto
 		keepassxc
 		gocryptfs
+
+		# Misc
 		wmctrl
-		appimage-run
 		xclip # needed for NeoVim to share the clipboard with the DE
 		xsel
-		dropbox
 	];
 
 	home.sessionVariables = {
@@ -155,10 +154,13 @@ in {
 
 	# Cloud
 	services.syncthing.enable = true;
-	services.nextcloud-client.enable = true;
+	services.nextcloud-client = {
+		enable = true;
+		startInBackground = true;
+	};
 	# services.dropbox.enable = true; # doesn't work
 
-	services.pulseeffects.enable = true;
+	services.easyeffects.enable = true;
 
 	services.redshift = {
 		enable = true;
