@@ -92,6 +92,7 @@ in {
 		file-roller
 		lame
 		flac
+		losslesscut-bin
 
 		# Recording
 		obs-studio
@@ -131,7 +132,7 @@ in {
 		man-pages-posix
 
 		# 3D printing
-		# cura
+		orca-slicer
 		openscad
 
 		# Games

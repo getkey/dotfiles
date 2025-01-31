@@ -22,10 +22,6 @@
 	boot.supportedFilesystems = [ "ntfs" ];
 	boot.tmp.cleanOnBoot = true;
 
-	boot.kernelParams = [
-		"processor.max_cstate=1" # Ryzen is known to be unstable on higher C-states, this should fix it
-	];
-
 	networking.hostName = "hus";
 	networking.firewall.enable = false;
 
@@ -92,6 +88,8 @@
 	nix.gc.automatic = true;
 	nix.settings.auto-optimise-store = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	nix.settings.max-jobs = 6;
+	nix.settings.cores = 1;
 
 	# This value determines the NixOS release from which the default
 	# settings for stateful data, like file locations and database versions
