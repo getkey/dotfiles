@@ -25,9 +25,8 @@ end
 
 if test -d $tentative_android_home
 	set -x ANDROID_HOME $tentative_android_home
-	fish_add_path -a $ANDROID_HOME/tools
-	fish_add_path -a $ANDROID_HOME/tools/bin
 	fish_add_path -a $ANDROID_HOME/platform-tools
+	fish_add_path -a $ANDROID_HOME/cmdline-tools/latest/bin
 end
 
 set -x GOPATH $HOME/go
