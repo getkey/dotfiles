@@ -93,6 +93,7 @@ in {
 		lame
 		flac
 		losslesscut-bin
+		opusTools
 
 		# Recording
 		obs-studio
@@ -124,19 +125,13 @@ in {
 		# Browsers
 		firefox
 		chromium
+		tor-browser
 
 		# System administration
 		htop
 		baobab
 		gparted
 		man-pages-posix
-
-		# 3D printing
-		orca-slicer
-		openscad
-
-		# Games
-		teeworlds
 
 		# Crypto
 		keepassxc

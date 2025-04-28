@@ -80,9 +80,6 @@
 	# necessary for pulseeffects to work, see home-manager config
 	programs.dconf.enable = true;
 
-	services.postgresql.enable = true;
-	services.postgresql.package = pkgs.postgresql_13;
-
 	programs.steam.enable = true;
 
 	nix.gc.automatic = true;
