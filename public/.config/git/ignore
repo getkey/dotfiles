@@ -6,3 +6,5 @@
 
 # JavaScript/TypeScript
 .yarn-error.log
+
+**/.claude/settings.local.json

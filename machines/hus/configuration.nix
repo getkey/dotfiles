@@ -24,6 +24,7 @@
 
 	networking.hostName = "hus";
 	networking.firewall.enable = false;
+	services.mozillavpn.enable = true;
 
 	# Set your time zone.
 	time.timeZone = "Europe/Amsterdam";
