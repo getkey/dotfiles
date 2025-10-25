@@ -136,11 +136,9 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local lspconfig = require('lspconfig')
-
 local servers = { 'ts_ls', 'gopls', 'eslint' }
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup {
+	vim.lsp.config[lsp] = {
 		on_attach = on_attach,
 		capabilities = capabilities,
 	}
