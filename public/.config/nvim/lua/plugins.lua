@@ -79,6 +79,10 @@ require("lazy").setup({
 	'tpope/vim-sleuth',
 	'ethanholz/nvim-lastplace',
 	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function()
