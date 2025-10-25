@@ -13,9 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		"RRethy/nvim-base16",
+		'kepano/flexoki-neovim',
+		name = 'flexoki',
+		lazy = false,
 		config = function()
-			vim.cmd.colorscheme('base16-tomorrow-night')
+			vim.cmd.colorscheme("flexoki")
 		end,
 	},
 	{
