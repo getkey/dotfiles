@@ -27,6 +27,8 @@ in {
 		neovim
 		neovim-qt
 		nodePackages.typescript-language-server
+		vscode-langservers-extracted
+		yaml-language-server
 		meld
 		jetbrains.idea-community
 
@@ -72,8 +74,6 @@ in {
 		nodePackages.typescript
 		sops
 		terraform
-		vscode-langservers-extracted
-		yaml-language-server
 
 		# Messaging
 		discord
@@ -105,7 +105,6 @@ in {
 		eog
 		quodlibet-full
 		xmp
-		milkytracker
 		spotify
 
 		# Office
@@ -116,7 +115,6 @@ in {
 		foliate
 		dropbox
 		transmission_4-gtk
-		appimage-run
 
 		# Image editing
 		inkscape
@@ -138,6 +136,8 @@ in {
 		gocryptfs
 
 		# Misc
+		appimage-run
+		praat
 		wmctrl
 		xclip # needed for NeoVim to share the clipboard with the DE
 		xsel

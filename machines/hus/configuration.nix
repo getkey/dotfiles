@@ -73,6 +73,9 @@
 	services.gvfs.enable = true;
 
 	virtualisation.podman.enable = true;
+	# allow running arm64 containers on amd64 host
+	boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+	boot.binfmt.preferStaticEmulators = true;
 
 	# used by redshift
 	services.geoclue2.enable = true;
