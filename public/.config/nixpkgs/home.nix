@@ -99,6 +99,7 @@ in {
 		obs-studio
 		gnome-screenshot
 		audacity
+		yt-dlp
 
 		# Medias
 		mpv

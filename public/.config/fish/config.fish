@@ -16,6 +16,9 @@ if type -fq yarn
 	# this is important because with nvm it might not always be $HOME/.yarn/bin
 	fish_add_path -a (yarn global bin)
 end
+if type -fq npm
+	fish_add_path -a "(npm config get prefix)/bin"
+end
 
 if test (uname) = 'Darwin'
 	set tentative_android_home /Users/$USER/Library/Android/sdk
