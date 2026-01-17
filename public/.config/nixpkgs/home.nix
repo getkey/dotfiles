@@ -30,7 +30,8 @@ in {
 		vscode-langservers-extracted
 		yaml-language-server
 		meld
-		jetbrains.idea-community
+		jetbrains.idea-oss
+		android-studio
 
 		# Terminal emulators
 		guake
