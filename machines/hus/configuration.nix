@@ -69,7 +69,6 @@
 	programs.fish.enable = true;
 	home-manager.users.getkey = import /home/getkey/.config/nixpkgs/home.nix;
 
-	programs.adb.enable = true;
 	services.gvfs.enable = true;
 
 	virtualisation.podman.enable = true;

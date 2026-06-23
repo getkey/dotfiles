@@ -26,7 +26,7 @@ in {
 		# Editors
 		neovim
 		neovim-qt
-		nodePackages.typescript-language-server
+		typescript-language-server
 		vscode-langservers-extracted
 		yaml-language-server
 		meld
@@ -45,7 +45,6 @@ in {
 		kubectx
 		gh
 		unstable.flyctl
-		corepack
 
 		# Network
 		whois
@@ -72,9 +71,10 @@ in {
 		jdk
 		python3
 		hugo
-		nodePackages.typescript
+		typescript
 		sops
 		terraform
+		android-tools
 
 		# Messaging
 		discord
@@ -87,14 +87,14 @@ in {
 		ffmpeg
 		imagemagick
 		optipng
-		nodePackages.svgo
+		svgo
 		zip
 		unzip
 		file-roller
 		lame
 		flac
 		losslesscut-bin
-		opusTools
+		opus-tools
 
 		# Recording
 		obs-studio
@@ -117,6 +117,9 @@ in {
 		foliate
 		dropbox
 		transmission_4-gtk
+		pdfarranger
+		anki
+		tmsu
 
 		# Image editing
 		inkscape
@@ -143,6 +146,7 @@ in {
 		wmctrl
 		xclip # needed for NeoVim to share the clipboard with the DE
 		xsel
+		orca-slicer
 	];
 
 	home.sessionVariables = {
