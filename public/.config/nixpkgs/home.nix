@@ -21,6 +21,9 @@ in {
 	programs.home-manager.enable = true;
 
 	nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.permittedInsecurePackages = [
+		"pnpm-10.29.2"
+	];
 
 	home.packages = with pkgs; [
 		# Editors
@@ -30,8 +33,8 @@ in {
 		vscode-langservers-extracted
 		yaml-language-server
 		meld
-		jetbrains.idea-oss
 		android-studio
+		tree-sitter
 
 		# Terminal emulators
 		guake
@@ -44,7 +47,6 @@ in {
 		kubectl
 		kubectx
 		gh
-		unstable.flyctl
 
 		# Network
 		whois
@@ -66,18 +68,15 @@ in {
 		go
 		gopls
 		gotools
-		rustup
 		gcc
-		jdk
-		python3
+		(python3.withPackages (ps: [ ps.pygobject3 ])) # for tmsu-gui
 		hugo
 		typescript
 		sops
-		terraform
 		android-tools
 
 		# Messaging
-		discord
+		# discord
 		slack
 		signal-desktop
 		zoom-us
@@ -91,13 +90,8 @@ in {
 		zip
 		unzip
 		file-roller
-		lame
-		flac
-		losslesscut-bin
-		opus-tools
 
 		# Recording
-		obs-studio
 		gnome-screenshot
 		audacity
 		yt-dlp
@@ -113,7 +107,6 @@ in {
 		hunspell
 		evince
 		libreoffice
-		zettlr
 		foliate
 		dropbox
 		transmission_4-gtk
@@ -128,25 +121,23 @@ in {
 		# Browsers
 		firefox
 		chromium
-		tor-browser
 
 		# System administration
 		htop
 		baobab
 		gparted
-		man-pages-posix
 
 		# Crypto
 		keepassxc
 		gocryptfs
 
 		# Misc
-		appimage-run
-		praat
 		wmctrl
 		xclip # needed for NeoVim to share the clipboard with the DE
 		xsel
 		orca-slicer
+		gtk3 # for tmsu-gui
+		gobject-introspection # for tmsu-gui
 	];
 
 	home.sessionVariables = {
