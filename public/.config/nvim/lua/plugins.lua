@@ -61,21 +61,6 @@ require("lazy").setup({
 		end,
 	},
 	'tpope/vim-vinegar',
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({
-				suggestion = {
-					auto_trigger = true,
-					keymap = {
-						accept = "<S-Tab>",
-					},
-				}
-			})
-		end,
-	},
 	'RRethy/vim-illuminate',
 	'lukas-reineke/indent-blankline.nvim',
 	'tpope/vim-sleuth',
