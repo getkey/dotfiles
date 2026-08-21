@@ -28,3 +28,5 @@
 	insteadOf = https://gitlab.com/
 [init]
 	defaultBranch = main
+[core]
+	editor = nvim

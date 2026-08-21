@@ -4,5 +4,5 @@ function nal
 	end
 	read -P 'Where are you? ' location
 	printf '\n\n## '(date '+%F %R')', '$location'\n\n' >> ~/mnt/journal/journal.md
-	$EDITOR '+normal Go' +startinsert ~/mnt/journal/journal.md
+	$VISUAL '+normal Go' +startinsert ~/mnt/journal/journal.md
 end
