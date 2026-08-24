@@ -33,8 +33,8 @@ in {
 		vscode-langservers-extracted
 		yaml-language-server
 		meld
-		android-studio
 		tree-sitter
+		zettlr
 
 		# Terminal emulators
 		guake
@@ -42,10 +42,6 @@ in {
 
 		# DevOps
 		awscli2
-		(google-cloud-sdk.withExtraComponents (with google-cloud-sdk.components; [gke-gcloud-auth-plugin]))
-		google-cloud-sql-proxy
-		kubectl
-		kubectx
 		gh
 
 		# Network
@@ -72,14 +68,11 @@ in {
 		(python3.withPackages (ps: [ ps.pygobject3 ])) # for tmsu-gui
 		hugo
 		typescript
-		sops
 		android-tools
 
 		# Messaging
-		# discord
-		slack
+		discord
 		signal-desktop
-		zoom-us
 		thunderbird
 
 		# File formats
