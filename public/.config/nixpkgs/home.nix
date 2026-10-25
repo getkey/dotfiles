@@ -58,6 +58,7 @@ in {
 		jq
 		moreutils
 		gnupg
+		unstable.opencode
 
 		# Dev
 		nodejs
@@ -131,11 +132,12 @@ in {
 		orca-slicer
 		gtk3 # for tmsu-gui
 		gobject-introspection # for tmsu-gui
+		vintagestory
 	];
 
 	home.sessionVariables = {
 		RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-		DICPATH = "${pkgs.hunspellDicts.en-us-large}/share/hunspell:${pkgs.hunspellDicts.fr-reforme1990}/share/hunspell";
+		DICPATH = "${pkgs.hunspellDicts.en-us-large}/share/hunspell:${pkgs.hunspellDicts.fr-reforme1990}/share/hunspell:${pkgs.hunspellDicts.nl_nl}/share/hunspell";
 	};
 
 	# Cloud
